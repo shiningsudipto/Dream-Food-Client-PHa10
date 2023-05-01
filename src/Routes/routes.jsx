@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import Home from '../Pages/Home';
+import ChefDetails from '../Pages/ChefDetails';
 
 const routes = createBrowserRouter([
     {
@@ -11,7 +12,10 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch(`http://localhost:5000/chef`)
+            },
+            {
+                path: 'chef/:id',
+                element: <ChefDetails />
             }
         ]
     }
