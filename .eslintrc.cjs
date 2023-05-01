@@ -10,6 +10,17 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
+    "react/prop-types": [
+      "error",
+      {
+        "ignore": [],
+        "customValidators": [],
+        "skipUndeclared": false,
+        "children": true
+      }
+    ],
+    "no-unused-vars": 0,
+    "no-undef": 0,
     'react-refresh/only-export-components': 'warn',
   },
 }
