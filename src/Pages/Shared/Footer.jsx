@@ -3,7 +3,11 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <h3>Footer</h3>
+            <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+                <div>
+                    <p>Copyright © 2023 - All right reserved by Food Corner Ltd</p>
+                </div>
+            </footer>
         </div>
     );
 };
