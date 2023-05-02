@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Recipes from './Shared/Recipes';
+import { FaThumbsUp } from "react-icons/fa";
 
 const ChefDetails = () => {
     const [details, setDetails] = useState([])
@@ -23,11 +24,12 @@ const ChefDetails = () => {
                         <p className='text-xl'>{bio}</p>
                         <p className='text-xl font-semibold'>Total Recipe: {num_recipes}</p>
                         <p className='text-xl font-semibold'>Year of Experience: {experience_years}</p>
-                        <p className='text-xl font-semibold'>Likes: {likes}</p>
+                        <p className='text-xl font-semibold flex items-center'><FaThumbsUp className='text-blue-600' /> {likes}</p>
                     </div>
                 </div>
                 <div>
                     <h3 className='text-3xl font-bold mt-10 my-4'>Top 3 recipe:</h3>
+                    {/* Chef and Recipe Details */}
                     <div className='grid grid-cols-3 gap-4'>
                         {
                             details?.recipes?.map(recipe => <Recipes
