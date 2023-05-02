@@ -11,7 +11,6 @@ const ChefCard = ({ chef }) => {
             .then(res => res.json())
             .then(data => setChef(data))
     }, [])
-    // const { name, picture, num_recipes, likes, experience_years, view_recipes } = chef;
     return (
         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 '>
             {
@@ -29,7 +28,7 @@ const ChefCard = ({ chef }) => {
                                 <p >Year of experience: {chef.experience_years}</p>
                             </div>
                             <div className="flex justify-between items-center">
-                                <p >Likes: </p>
+                                <p >Likes: {chef.likes}</p>
                                 <Link to={`/chef/${chef.id}`}>
                                     <button className="btn btn-primary" >{chef.view_recipes}</button>
                                 </Link>
