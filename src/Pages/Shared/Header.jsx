@@ -3,8 +3,17 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log(user);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+                console.log(error);
+            });
+    }
     return (
         <div className='container mx-auto'>
             <div className="navbar bg-base-100">
@@ -28,17 +37,26 @@ const Header = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Dream Food</a>
+                    <a className="lg:text-3xl font-semibold">Dream Food</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/">Home</Link></li>
                         <li><a>Blog</a></li>
-                        <li>{user?.name}</li>
+                        <li>{user?.displayName}</li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Profile</a>
+                    <div>
+                        {
+                            user ? <img src={user?.photoURL} className='h-14 rounded-full' alt="" title={user.displayName} />
+                                :
+                                <Link to='/login' className="btn">Log in</Link>
+                        }
+                        {
+                            user && <button onClick={handleLogOut} className='btn'>Logout</button>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

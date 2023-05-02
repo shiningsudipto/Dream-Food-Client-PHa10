@@ -1,13 +1,17 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../Provider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
     const [error, setError] = useState('');
     const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
-    const provider = new GoogleAuthProvider;
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const handleUser = event => {
         event.preventDefault();
@@ -19,6 +23,7 @@ const Login = () => {
         signIn(email, password)
             .then((result) => {
                 const user = result.user;
+                navigate(from, { replace: true })
                 console.log(user);
             })
             .catch((error) => {

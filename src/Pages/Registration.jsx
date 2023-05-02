@@ -13,7 +13,7 @@ const Registration = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password);
-        if (password > 6) {
+        if (password < 6) {
             setRegError('enter at least 6 character of password')
         }
         createUser(email, password)

@@ -18,8 +18,8 @@ const PopularRecipes = () => {
             </div>
             <div className='grid grid-cols-4 gap-2'>
                 {
-                    dishes.map(dish => (
-                        <div className="card bg-base-100 shadow-xl image-full">
+                    dishes.map((dish, index) => (
+                        <div key={index} className="card bg-base-100 shadow-xl image-full">
                             <figure><img src={dish.img} alt="Shoes" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{dish.name}</h2>
