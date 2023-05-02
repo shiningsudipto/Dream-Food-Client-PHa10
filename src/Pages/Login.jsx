@@ -6,7 +6,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { signIn, googleSignIn } = useContext(AuthContext);
+    const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
     const provider = new GoogleAuthProvider;
 
     const handleUser = event => {
@@ -22,7 +22,6 @@ const Login = () => {
                 console.log(user);
             })
             .catch((error) => {
-                const errorCode = error.code;
                 const errorMessage = error.message;
                 setError(errorMessage)
             });
@@ -40,10 +39,18 @@ const Login = () => {
                 const errorMessage = error.message;
                 setLoginError(errorMessage);
             })
-        //   .finally(() => {
-        //     setLoading(false);
-        //   });
     };
+    const handleGithubLogin = () => {
+        githubSignIn()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+                console.log(errorMessage);
+            });
+    }
 
     return (
         <div className='my-12'>
@@ -63,7 +70,7 @@ const Login = () => {
                 </div>
                 <div>
                     <button onClick={handelGoogleLogin} className='btn btn-outline btn-primary w-full mb-4'>Login with Google <FaGoogle className='ms-2' /></button>
-                    <button className='btn btn-outline btn-primary w-full'>Login with Github <FaGithub className='ms-2' /></button>
+                    <button onClick={handleGithubLogin} className='btn btn-outline btn-primary w-full'>Login with Github <FaGithub className='ms-2' /></button>
                 </div>
             </div>
         </div>
