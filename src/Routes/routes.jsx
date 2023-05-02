@@ -6,6 +6,7 @@ import ChefDetails from '../Pages/ChefDetails';
 import Login from '../Pages/Login';
 import Registration from '../Pages/Registration';
 import PrivateRoute from './PrivateRoute';
+import NotFoundPage from '../Pages/NotFoundPage';
 
 const routes = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const routes = createBrowserRouter([
                 element: <Registration />
             }
         ]
+    },
+    {
+        path: "*",
+        element: <NotFoundPage />
     }
 ])
 

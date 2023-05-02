@@ -1,8 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaHatCowboy, FaStar } from "react-icons/fa";
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const PopularRecipes = () => {
     const [dishes, setDishes] = useState([]);
+
+    const { loading } = useContext(AuthContext);
+    const handleLoading = () => {
+        if (loading) {
+            return <progress className="progress w-56"></progress>
+        }
+    }
+
     useEffect(() => {
         fetch("http://localhost:5000/dishes")
             .then(res => res.json())
@@ -16,7 +25,7 @@ const PopularRecipes = () => {
                 <h4 className='my-6 font-semibold text-xl'>Discover our most popular recipes, as rated by our community of food lovers. From mouth-watering mains to indulgent desserts, our top recipes are guaranteed to impress.
                 </h4>
             </div>
-            <div className='grid grid-cols-4 gap-2'>
+            <div className='grid grid-cols-4 gap-2' >
                 {
                     dishes.map((dish, index) => (
                         <div key={index} className="card bg-base-100 shadow-xl image-full">
@@ -37,7 +46,6 @@ const PopularRecipes = () => {
                     ))
                 }
             </div>
-
         </div>
     );
 };

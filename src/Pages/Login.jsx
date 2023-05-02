@@ -6,12 +6,11 @@ import { AuthContext } from '../Provider/AuthProvider';
 const Login = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const [error, setError] = useState('');
     const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
-
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/'
 
     const handleUser = event => {
         event.preventDefault();

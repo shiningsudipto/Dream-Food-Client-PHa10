@@ -6,7 +6,10 @@ import PopularRecipes from './Shared/PopularRecipes';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Home = () => {
-    const { user } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext)
+    if (loading) {
+        return <progress className="progress w-56"></progress>
+    }
     return (
         <div>
             {/* banner */}
@@ -18,7 +21,11 @@ const Home = () => {
             </div>
             {/* Popular recipe */}
             <div>
-                <PopularRecipes />
+                {
+                    loading ? <progress className="progress w-56"></progress>
+                        :
+                        <PopularRecipes />
+                }
             </div>
         </div>
     );

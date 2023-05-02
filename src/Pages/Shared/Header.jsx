@@ -43,7 +43,6 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/">Home</Link></li>
                         <li><a>Blog</a></li>
-                        <li>{user?.displayName}</li>
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -53,9 +52,9 @@ const Header = () => {
                                 :
                                 <Link to='/login' className="btn">Log in</Link>
                         }
-                        {
+                        {/* {
                             user && <button onClick={handleLogOut} className='btn'>Logout</button>
-                        }
+                        } */}
                     </div>
                 </div>
             </div>
