@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
     return (
         <div className='container mx-auto'>
             <div className="navbar bg-base-100">
@@ -31,6 +34,7 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/">Home</Link></li>
                         <li><a>Blog</a></li>
+                        <li>{user?.name}</li>
                     </ul>
                 </div>
                 <div className="navbar-end">

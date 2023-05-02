@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Banner from './Shared/Banner';
 import { useLoaderData, useParams } from 'react-router-dom';
 import ChefCard from './Shared/ChefCard';
 import PopularRecipes from './Shared/PopularRecipes';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Home = () => {
+    const { user } = useContext(AuthContext)
     return (
         <div>
             {/* banner */}
