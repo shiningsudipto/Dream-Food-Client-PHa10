@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.activee {
+    @apply font-semibold text-primary;
+}

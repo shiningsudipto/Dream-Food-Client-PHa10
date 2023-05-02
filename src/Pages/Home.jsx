@@ -16,7 +16,7 @@ const Home = () => {
             <Banner />
             {/* chef card */}
             <div className='container mx-auto my-10'>
-                <h3 className='text-5xl font-semibold text-center my-6'>Our Best Chef</h3>
+                <h3 className='lg:text-5xl text-2xl lg:font-semibold font-bold text-center my-6'>Our Best Chef</h3>
                 <ChefCard />
             </div>
             {/* Popular recipe */}

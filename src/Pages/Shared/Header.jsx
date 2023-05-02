@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Header = () => {
@@ -14,6 +14,7 @@ const Header = () => {
                 console.log(error);
             });
     }
+    const location = useLocation();
     return (
         <div className='container mx-auto'>
             <div className="navbar bg-base-100">
@@ -41,8 +42,8 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link to="/">Home</Link></li>
-                        <li><a>Blog</a></li>
+                        <li className='me-4'><Link className={location.pathname === '/' ? 'activee' : ''} to="/">Home</Link></li>
+                        <li><Link className={location.pathname === '/blog' ? 'activee' : ''} to='/blog'>Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

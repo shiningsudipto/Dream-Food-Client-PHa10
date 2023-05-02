@@ -7,6 +7,7 @@ import Login from '../Pages/Login';
 import Registration from '../Pages/Registration';
 import PrivateRoute from './PrivateRoute';
 import NotFoundPage from '../Pages/NotFoundPage';
+import Blog from '../Pages/Blog';
 
 const routes = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const routes = createBrowserRouter([
             {
                 path: 'Registration',
                 element: <Registration />
+            },
+            {
+                path: '/blog',
+                element: <Blog />
             }
         ]
     },
