@@ -32,7 +32,7 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <a className="lg:text-3xl font-semibold">Dream Food</a>
+                    <a className="lg:text-4xl text-2xl font-bold text-primary">Dream Food</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -50,7 +50,7 @@ const Header = () => {
                             location.pathname === '/blog' ? ({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button> : ''
                         }
                         {
-                            user && <button onClick={handleLogOut} className='btn ms-4'>Logout</button>
+                            user && <button onClick={handleLogOut} className='btn btn-primary ms-4'>Logout</button>
                         }
                     </div>
                 </div>

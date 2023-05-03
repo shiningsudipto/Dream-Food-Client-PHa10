@@ -26,7 +26,7 @@ const ChefCard = ({ chef }) => {
                         <div key={chef.id} className="card w-96 bg-base-100 shadow-xl">
 
                             <figure className="px-10 pt-10">
-                                <img src={chef.picture} key={chef.id} alt="chef" className="rounded-xl h-52" />
+                                <img src={chef.picture} loading='lazy' key={chef.id} alt="chef" className="rounded-xl h-52" />
                             </figure>
                             <div className="card-body">
                                 <h2 className="card-title">{chef.name} </h2>
