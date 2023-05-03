@@ -10,7 +10,6 @@ const Blog = () => {
             <Pdf targetRef={ref} filename="code-example.pdf">
                 {({ toPdf }) => <div className='flex justify-center'>
                     <h3 className='text-3xl font-semibold flex items-center '>Generate Pdf <span className='ms-3 cursor-pointer text-primary' onClick={toPdf}><FaCloudDownloadAlt className='text-3xl' /></span></h3>
-
                 </div>}
             </Pdf>
             <div className='my-6 mx-auto p-4' ref={ref} style={{ width: '800px' }}>

@@ -30,6 +30,7 @@ const Home = () => {
                         <PopularRecipes />
                 }
             </div>
+            {/* Our story section */}
             <div>
                 <OurStory />
             </div>

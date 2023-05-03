@@ -4,16 +4,9 @@ import Recipes from './Shared/Recipes';
 import { FaThumbsUp } from "react-icons/fa";
 
 const ChefDetails = () => {
-    // const [details, setDetails] = useState([])
     const { id } = useParams();
     const details = useLoaderData();
-    // console.log(id);
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/chef/${id}`)
-    //         .then(res => res.json())
-    //         .then(data => setDetails(data))
-    // }, [])
-    console.log(details);
+    // console.log(details);
     const { name, picture, num_recipes, likes, experience_years, bio, recipes } = details;
     return (
         <div>
@@ -33,7 +26,8 @@ const ChefDetails = () => {
                     {/* Chef and Recipe Details */}
                     <div className='grid grid-cols-3 gap-4'>
                         {
-                            details?.recipes?.map(recipe => <Recipes
+                            details?.recipes?.map((recipe, index) => <Recipes
+                                key={index}
                                 recipe={recipe}
                             ></Recipes>)
                         }

@@ -21,7 +21,7 @@ const routes = createBrowserRouter([
             {
                 path: 'chef/:id',
                 element: <PrivateRoute><ChefDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-azure.vercel.app/chef/${params.id}`)
             },
             {
                 path: 'login',

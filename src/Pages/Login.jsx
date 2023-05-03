@@ -17,13 +17,13 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
-
+        // console.log(email, password);
+        // email, password login
         signIn(email, password)
             .then((result) => {
                 const user = result.user;
                 navigate(from, { replace: true })
-                console.log(user);
+                // console.log(user);
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -35,24 +35,26 @@ const Login = () => {
     const handelGoogleLogin = () => {
         googleSignIn()
             .then((result) => {
-                if (result?.user?.uid) {
-                    updateUserDB(result?.user?.displayName, result?.user?.email);
-                }
+                navigate(from, { replace: true })
+                // console.log("route", from);
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                setLoginError(errorMessage);
+                setError(errorMessage);
+                // console.log(errorMessage);
             })
     };
+    // github login
     const handleGithubLogin = () => {
         githubSignIn()
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+                navigate(from, { replace: true })
             }).catch((error) => {
                 const errorMessage = error.message;
                 setError(errorMessage);
-                console.log(errorMessage);
+                // console.log(errorMessage);
             });
     }
 

@@ -17,12 +17,14 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
+    // data setting
     const settingDataToProfile = (name, imgURL) => {
         return updateProfile(
             auth.currentUser, {
             displayName: name, photoURL: imgURL
         })
     }
+    // sign in
     const signIn = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
