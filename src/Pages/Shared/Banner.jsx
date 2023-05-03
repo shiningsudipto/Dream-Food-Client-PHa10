@@ -10,7 +10,7 @@ const Banner = () => {
                         <h1 className="mb-5 lg:text-5xl text-3xl font-bold">It is even better than
                             an expensive cookery book</h1>
                         <p className="mb-5">
-                            Learn how to make your favorite restaurant’s dishes
+                            Our website is dedicated to showcasing some of the best and most beloved American recipes, providing step-by-step instructions and helpful tips for making these dishes in your own kitchen
                         </p>
                         <button className="btn btn-primary">Get Started</button>
                     </div>

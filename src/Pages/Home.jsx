@@ -4,6 +4,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import ChefCard from './Shared/ChefCard';
 import PopularRecipes from './Shared/PopularRecipes';
 import { AuthContext } from '../Provider/AuthProvider';
+import OurStory from './Shared/OurStory';
 
 const Home = () => {
     const { user, loading } = useContext(AuthContext)
@@ -28,6 +29,9 @@ const Home = () => {
                         :
                         <PopularRecipes />
                 }
+            </div>
+            <div>
+                <OurStory />
             </div>
         </div>
     );
