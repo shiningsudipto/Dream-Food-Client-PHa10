@@ -8,7 +8,9 @@ import { AuthContext } from '../Provider/AuthProvider';
 const Home = () => {
     const { user, loading } = useContext(AuthContext)
     if (loading) {
-        return <progress className="progress w-56"></progress>
+        return <div className='text-center'>
+            <progress className="progress w-96"></progress>
+        </div>
     }
     return (
         <div>
