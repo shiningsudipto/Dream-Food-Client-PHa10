@@ -53,6 +53,9 @@ const Header = () => {
                                 :
                                 <Link to='/login' className="btn">Log in</Link>
                         }
+                        {
+                            location.pathname === '/blog' ? ({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button> : ''
+                        }
                         {/* {
                             user && <button onClick={handleLogOut} className='btn'>Logout</button>
                         } */}

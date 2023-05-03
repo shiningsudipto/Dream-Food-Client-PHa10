@@ -14,7 +14,11 @@ const ChefCard = ({ chef }) => {
             .then(data => setChef(data))
     }, [])
     return (
-        <LazyLoad placeholder={<div>Loading...</div>}>
+        <LazyLoad placeholder={
+            <div className='text-center'>
+                <progress className="progress w-96"></progress>
+            </div>
+        }>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 '>
                 {
                     chefs.map(chef => (
