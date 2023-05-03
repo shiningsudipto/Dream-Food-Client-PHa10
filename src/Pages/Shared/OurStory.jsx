@@ -8,7 +8,7 @@ const OurStory = () => {
             <progress className="progress w-96"></progress>
         </div>}>
             <div className='container mx-auto my-16'>
-                <div className='grid lg:grid-cols-2 grid-cols-1 gap-6'>
+                <div className='grid lg:grid-cols-2 grid-cols-1 gap-6 lg:px-0 px-4'>
                     <div>
                         <img className='rounded-xl' loading='lazy' src={storyImg} alt="" />
                     </div>

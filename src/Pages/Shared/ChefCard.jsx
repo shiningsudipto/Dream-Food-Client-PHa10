@@ -19,11 +19,11 @@ const ChefCard = ({ chef }) => {
                 <progress className="progress w-96"></progress>
             </div>
         }>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 '>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-8 gap-2'>
                 {
                     chefs.map(chef => (
 
-                        <div key={chef.id} className="card w-96 bg-base-100 shadow-xl">
+                        <div key={chef.id} className="card bg-base-100 shadow-xl">
 
                             <figure className="px-10 pt-10">
                                 <img src={chef.picture} loading='lazy' key={chef.id} alt="chef" className="rounded-xl h-52" />

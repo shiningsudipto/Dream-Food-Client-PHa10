@@ -9,7 +9,7 @@ const PopularRecipes = () => {
             .then(res => res.json())
             .then(data => setDishes(data))
     }, [])
-    console.log(dishes);
+    // console.log(dishes);
     return (
         <LazyLoad threshold={-100} placeholder={<progress className="progress w-56"></progress>}>
             <div className='my-16'>
@@ -18,10 +18,10 @@ const PopularRecipes = () => {
                     <h4 className='my-6 lg:font-semibold lg:text-xl text-lg'>Discover our most popular recipes, as rated by our community of food lovers. From mouth-watering mains to indulgent desserts, our top recipes are guaranteed to impress.
                     </h4>
                 </div>
-                <div className='grid lg:grid-cols-4 grid-cols-1 gap-2' >
+                <div className='grid lg:grid-cols-4 grid-cols-1 gap-2 lg:px-0 px-4' >
                     {
                         dishes.map((dish, index) => (
-                            <div key={index} className="card bg-base-100 shadow-xl image-full">
+                            <div key={index} className="card bg-base-100 shadow-xl">
                                 <figure><img src={dish.img} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{dish.name}</h2>
