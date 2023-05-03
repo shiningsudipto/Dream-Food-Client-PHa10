@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazyload';
 const PopularRecipes = () => {
     const [dishes, setDishes] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/dishes")
+        fetch("https://assignment-10-server-azure.vercel.app/dishes")
             .then(res => res.json())
             .then(data => setDishes(data))
     }, [])
