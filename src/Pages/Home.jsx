@@ -10,7 +10,7 @@ const Home = () => {
     const { user, loading } = useContext(AuthContext)
     if (loading) {
         return <div className='text-center'>
-            <progress className="progress w-96"></progress>
+            <progress className="progress w-1/2"></progress>
         </div>
     }
     return (
@@ -25,7 +25,7 @@ const Home = () => {
             {/* Popular recipe */}
             <div>
                 {
-                    loading ? <progress className="progress w-56"></progress>
+                    loading ? <progress className="progress w-1/2"></progress>
                         :
                         <PopularRecipes />
                 }

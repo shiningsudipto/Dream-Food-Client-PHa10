@@ -11,17 +11,17 @@ const PopularRecipes = () => {
     }, [])
     // console.log(dishes);
     return (
-        <LazyLoad threshold={-100} placeholder={<progress className="progress w-56"></progress>}>
+        <LazyLoad threshold={-100} placeholder={<progress className="progress w-1/2"></progress>}>
             <div className='my-16'>
                 <div className='lg:w-1/2 mx-auto text-center'>
                     <h2 className='lg:text-5xl text-2xl lg:font-semibold font-bold'>Most Popular Recipes</h2>
                     <h4 className='my-6 lg:font-semibold lg:text-xl text-lg'>Discover our most popular recipes, as rated by our community of food lovers. From mouth-watering mains to indulgent desserts, our top recipes are guaranteed to impress.
                     </h4>
                 </div>
-                <div className='grid lg:grid-cols-4 grid-cols-1 gap-2 lg:px-0 px-4' >
+                <div className='grid lg:grid-cols-4 grid-cols-1 gap-2 px-4 lg:px-0' >
                     {
                         dishes.map((dish, index) => (
-                            <div key={index} className="card bg-base-100 shadow-xl">
+                            <div key={index} className="card bg-base-100 shadow-xl image-full">
                                 <figure><img src={dish.img} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{dish.name}</h2>

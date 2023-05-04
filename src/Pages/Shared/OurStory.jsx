@@ -5,7 +5,7 @@ import storyImg from '../../../public/img-6.jpg'
 const OurStory = () => {
     return (
         <LazyLoad threshold={-100} placeholder={<div className='text-center'>
-            <progress className="progress w-96"></progress>
+            <progress className="progress w-1/2"></progress>
         </div>}>
             <div className='container mx-auto my-16'>
                 <div className='grid lg:grid-cols-2 grid-cols-1 gap-6 lg:px-0 px-4'>

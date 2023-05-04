@@ -16,7 +16,7 @@ const ChefCard = ({ chef }) => {
     return (
         <LazyLoad placeholder={
             <div className='text-center'>
-                <progress className="progress w-96"></progress>
+                <progress className="progress w-1/2"></progress>
             </div>
         }>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-8 gap-2'>

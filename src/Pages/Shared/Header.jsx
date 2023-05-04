@@ -44,7 +44,7 @@ const Header = () => {
                         {
                             user ? <img src={user?.photoURL} className='h-14 rounded-full' alt="" title={user.displayName} />
                                 :
-                                <Link to='/login' className="btn">Log in</Link>
+                                <Link to='/login' className="btn btn-primary">Log in</Link>
                         }
                         {
                             location.pathname === '/blog' ? ({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button> : ''
