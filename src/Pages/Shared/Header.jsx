@@ -42,7 +42,9 @@ const Header = () => {
                 <div className="navbar-end">
                     <div className='flex items-center'>
                         {
-                            user ? <img src={user?.photoURL} className='h-14 rounded-full' alt="" title={user.displayName} />
+                            user ? <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                <img src={user?.photoURL} className='h-14 rounded-full' alt="" />
+                            </div>
                                 :
                                 <Link to='/login' className="btn btn-primary">Log in</Link>
                         }

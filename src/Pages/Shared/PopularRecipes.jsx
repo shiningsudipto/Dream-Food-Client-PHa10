@@ -22,7 +22,10 @@ const PopularRecipes = () => {
                     {
                         dishes.map((dish, index) => (
                             <div key={index} className="card bg-base-100 shadow-xl image-full">
-                                <figure><img src={dish.img} alt="Shoes" /></figure>
+                                <figure>
+                                    <img src={dish.img} alt="Shoes" />
+                                </figure>
+
                                 <div className="card-body">
                                     <h2 className="card-title">{dish.name}</h2>
                                     <div>
