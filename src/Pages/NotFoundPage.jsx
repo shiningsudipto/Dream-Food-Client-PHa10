@@ -1,5 +1,5 @@
 import React from 'react';
-import notFount from '../../public/404notfound.jpg'
+import notFount from '../assets/404notfound.jpg'
 import Header from './Shared/Header';
 import Footer from './Shared/Footer';
 

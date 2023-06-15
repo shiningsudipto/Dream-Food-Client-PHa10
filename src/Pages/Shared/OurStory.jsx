@@ -1,6 +1,6 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
-import storyImg from '../../../public/img-6.jpg'
+import storyImg from '../../assets/img-6.jpg'
 
 const OurStory = () => {
     return (

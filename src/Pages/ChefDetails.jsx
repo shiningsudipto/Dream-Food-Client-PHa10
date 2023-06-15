@@ -11,7 +11,7 @@ const ChefDetails = () => {
     return (
         <div>
             <div className='container mx-auto my-10'>
-                <div className="grid grid-cols-3 shadow-xl rounded-lg">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 shadow-xl rounded-lg">
                     <figure><img src={picture} className='rounded-lg h-96' alt="Movie" /></figure>
                     <div className="card-body col-span-2">
                         <h2 className="card-title text-3xl mb-4">{name}</h2>
@@ -24,7 +24,7 @@ const ChefDetails = () => {
                 <div>
                     <h3 className='text-3xl font-bold mt-10 my-4'>Top 3 recipe:</h3>
                     {/* Chef and Recipe Details */}
-                    <div className='grid grid-cols-3 gap-4'>
+                    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
                         {
                             details?.recipes?.map((recipe, index) => <Recipes
                                 key={index}

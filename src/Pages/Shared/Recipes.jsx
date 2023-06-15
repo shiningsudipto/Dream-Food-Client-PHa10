@@ -5,7 +5,8 @@ import { FaStar, FaRegStar, FaHeart } from "react-icons/fa";
 import Rating from 'react-rating';
 
 const Recipes = ({ recipe }) => {
-    const { name, cooking_method, rating } = recipe;
+    const { name, cooking_method, rating, image } = recipe;
+    console.log("recipe", recipe);
     const [isButtonDisabled, setButtonDisabled] = useState(false);
     const notify = () => {
         toast("Recipe added to the favorite!")
@@ -13,8 +14,9 @@ const Recipes = ({ recipe }) => {
     };
     return (
         <div>
-            <div className="card bg-base-100 shadow-xl">
+            <div className="card bg-base-100 shadow-2xl">
                 <div className="card-body">
+                    <img className='rounded-md' src={image} alt="" />
                     <h2 className="card-title text-2xl font-bold underline">{name}</h2>
                     <div>
                         <h3 className='text-xl font-semibold mt-5 mb-4'>Ingredients:</h3>

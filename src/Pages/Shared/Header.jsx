@@ -32,7 +32,7 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <a className="lg:text-4xl text-2xl font-bold text-primary">Dream Food</a>
+                    <p className="lg:text-4xl md:text-2xl text-xl font-bold text-primary">Dream Food</p>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
